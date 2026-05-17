@@ -44,7 +44,7 @@ body::before {
 main {
     width: min(620px, calc(100% - 3rem));
     margin-left: clamp(2rem, 18vw, 22rem);
-    padding: clamp(3rem, 9vh, 5rem) 0 3rem;
+    
 }
 
 /* Typography */
