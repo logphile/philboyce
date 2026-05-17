@@ -11,20 +11,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <h1>Phil Boyce</h1>
-        <p class="location">Virginia</p>
-        
-        <h2>The Shape of Staying</h2>
-        <p class="meta">Literary Fiction · 59,000 words</p>
-        
-        <p class="description">
-            A novel about the quiet architecture of loss and the small, deliberate acts that hold a life together.
-        </p>
-        
-        <p class="contact">
+    <main class="site-card" aria-labelledby="site-title">
+        <header class="identity">
+            <h1 id="site-title">Phil Boyce</h1>
+            <p class="location">Virginia</p>
+        </header>
+
+        <section class="work" aria-labelledby="book-title">
+            <h2 id="book-title">The Shape of Staying</h2>
+            <p class="meta">Literary Fiction · 59,000 words</p>
+
+            <p class="thesis">A man mistakes management for preparation.</p>
+
+            <hr aria-hidden="true">
+
+            <p class="description">
+                A novel about the quiet architecture of loss and the small, deliberate acts that hold a life together. Set in rural Virginia, it follows a man who has learned to maintain rather than change, to preserve rather than build, until the arrival of an unexpected letter forces him to confront the difference between staying still and being stuck.
+            </p>
+
+            <blockquote>
+                “He had become, over the years, an expert in the maintenance of things that were already broken.”
+            </blockquote>
+        </section>
+
+        <footer class="contact">
+            <p>Phil Boyce lives in Virginia and writes literary fiction.</p>
             <a href="mailto:hello@philboyce.com">hello@philboyce.com</a>
-        </p>
+        </footer>
     </main>
 </body>
 </html>

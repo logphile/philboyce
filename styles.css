@@ -8,8 +8,8 @@
 :root {
     --bg-color: #171717;
     --text-primary: #e8e3dc;
-    --text-secondary: #a9a39a;
-    --text-muted: #77716a;
+    --text-secondary: #aaa39a;
+    --text-muted: #817a72;
     --border-color: rgba(232, 227, 220, 0.18);
 }
 
@@ -18,107 +18,154 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(232, 227, 220, 0.035) 0.5px, transparent 0.5px);
+    background-size: 3px 3px;
+    opacity: 0.18;
+}
+
 main {
-    max-width: 600px;
+    width: min(640px, calc(100% - 3rem));
     margin-left: clamp(2rem, 18vw, 22rem);
-    padding-top: clamp(4rem, 15vh, 8rem);
-    padding-right: 2rem;
+    padding: clamp(3rem, 9vh, 5rem) 0 3rem;
 }
 
 /* Typography */
-h1, h2 {
+h1,
+h2 {
     font-family: 'Source Serif 4', Georgia, serif;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
 }
 
 h1 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    margin-bottom: 0.25rem;
+    font-size: clamp(2.15rem, 3.8vw, 2.85rem);
+    margin-bottom: 0.2rem;
 }
 
 h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-    margin-bottom: 0.25rem;
+    font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+    margin-bottom: 0.15rem;
 }
 
 p {
-    font-weight: 300;
-    margin-bottom: 1.25rem;
-}
-
-.location {
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    letter-spacing: 0.01em;
+    font-weight: 300;
 }
 
+.identity {
+    margin-bottom: clamp(1.8rem, 5vh, 3.25rem);
+}
+
+.location,
 .meta {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 400;
     letter-spacing: 0.01em;
-    margin-bottom: 1.5rem;
+}
+
+.thesis {
+    max-width: 520px;
+    margin-top: clamp(1.5rem, 3.5vh, 2.15rem);
+    color: var(--text-primary);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+hr {
+    width: 100%;
+    max-width: 560px;
+    height: 1px;
+    margin: clamp(1.25rem, 3vh, 1.75rem) 0 clamp(1.35rem, 3vh, 1.9rem);
+    border: 0;
+    background: var(--border-color);
 }
 
 .description {
+    max-width: 560px;
+    font-size: 0.95rem;
+    line-height: 1.78;
+}
+
+blockquote {
+    max-width: 500px;
+    margin-top: clamp(1.25rem, 3vh, 1.65rem);
+    padding-left: 1.15rem;
+    border-left: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+    font-style: italic;
+    font-weight: 400;
     line-height: 1.7;
-    max-width: 520px;
 }
 
 .contact {
-    margin-top: 1.5rem;
+    margin-top: clamp(2rem, 5vh, 3.15rem);
+}
+
+.contact p {
+    max-width: 520px;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
 }
 
 .contact a {
     color: var(--text-primary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 400;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.contact a:hover {
+.contact a:hover,
+.contact a:focus-visible {
     border-bottom-color: var(--border-color);
+    outline: none;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     main {
-        margin-left: clamp(1.5rem, 12vw, 16rem);
+        margin-left: clamp(1.5rem, 12vw, 12rem);
     }
 }
 
 @media (max-width: 768px) {
     main {
+        width: auto;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
-        max-width: none;
-        padding-top: 6rem;
-        padding-right: 0;
+        padding-top: 5rem;
     }
 
-    h1 {
-        font-size: 2.2rem;
+    .identity {
+        margin-bottom: 2.5rem;
     }
 
-    h2 {
-        font-size: 1.5rem;
+    .description {
+        font-size: 0.93rem;
     }
 }
 
@@ -126,14 +173,14 @@ p {
     main {
         margin-left: 1.25rem;
         margin-right: 1.25rem;
-        padding-top: 5rem;
+        padding-top: 4rem;
     }
 
     h1 {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
     }
 }
