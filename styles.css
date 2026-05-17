@@ -22,7 +22,6 @@ html {
 }
 
 body {
-    padding-top: clamp(4rem, 11vh, 6rem);
     min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-primary);
