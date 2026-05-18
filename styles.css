@@ -136,6 +136,14 @@ blockquote {
     line-height: 1.6;
 }
 
+.status {
+    margin-top: -0.15rem;
+    margin-bottom: 0.95rem;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+}
+
 .contact a {
     color: var(--text-primary);
     border-bottom: 1px solid transparent;
