@@ -136,6 +136,10 @@ blockquote {
     line-height: 1.6;
 }
 
+.contact p:first-of-type {
+    margin-bottom: 1.15rem;
+}
+
 .status {
     margin-top: -0.15rem;
     margin-bottom: 0.95rem;
