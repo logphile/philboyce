@@ -202,3 +202,32 @@ blockquote {
         font-size: 1.45rem;
     }
 }
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.author-photo {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+}
+
+/* Prevent the portrait from crowding smaller screens */
+@media (max-width: 650px) {
+    .profile-header {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .author-photo {
+        width: 130px;
+        height: 130px;
+    }
+}
